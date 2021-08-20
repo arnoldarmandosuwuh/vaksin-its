@@ -33,4 +33,9 @@ class JadwalVaksinasi extends Model
     {
         return $this->belongsTo('App\Models\JenisVaksin', 'vaksin_id', 'id');
     }
+
+    public function peserta()
+    {
+        return $this->hasMany('App\Models\Peserta', 'jadwal_vaksin_id', 'id');
+    }
 }

@@ -15,7 +15,6 @@
     <div class="d-lg-none mg-t-10">
     </div>
     <div>
-        <a href="{{ route('jadwal-vaksinasi.create') }}"  class="btn btn-its tx-montserrat tx-semibold"><i data-feather="plus" class="wd-10 mg-r-5 tx-color-its2"></i> Tambah</a>
     </div>
 </div>
 
@@ -26,7 +25,7 @@
 
             @foreach ($jadwal as $item )
               <div class="card-list-item">
-                <a href="{{ route('jadwal-vaksinasi.show', $item->id) }}">
+                <a href="{{ route('jadwal-vaksin.show', $item->id) }}">
                   <div class="d-flex justify-content-between align-items-center sc-link">
                     <div class="media">
                       <div class="wd-40 ht-40 bg-its-icon tx-color-its mg-r-15 mg-md-r-15 d-flex align-items-center justify-content-center rounded-its"><i data-feather="calendar"></i></div>

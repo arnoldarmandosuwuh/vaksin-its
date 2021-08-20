@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\JenisVaksinController;
 use App\Http\Controllers\Admin\PegawaiController;
 use App\Http\Controllers\Admin\VaksinatorController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Pegawai\JadwalVaksinController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,10 +21,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
+
+    // Route Admin
     Route::resource('jenis-vaksin', JenisVaksinController::class);
     Route::resource('vaksinator', VaksinatorController::class);
     Route::resource('pegawai', PegawaiController::class);
     Route::resource('jadwal-vaksinasi', JadwalVaksinasiController::class);
+    
+    // Route Pegawai
+    Route::resource('jadwal-vaksin', JadwalVaksinController::class);
 });
 
 require __DIR__.'/auth.php';
