@@ -20,7 +20,6 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'nip',
         'email',
         'password',
     ];
@@ -43,4 +42,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function pegawai()
+    {
+        return $this->hasMany('App\Models\Pegawai', 'users_id', 'id');
+    }
 }

@@ -36,6 +36,7 @@
  <link href="{{ asset('lib/jqvmap/jqvmap.min.css') }}" rel="stylesheet">
  <link href="{{ asset('lib/prismjs/themes/prism-vs.css') }}" rel="stylesheet">
  <link href="{{ asset('lib/animate.css/animate.min.css') }}" rel="stylesheet">
+ <link href="{{ asset('lib/select2/css/select2.min.css') }}" rel="stylesheet">
 
  <!-- DashForge CSS -->
  <link rel="stylesheet" href="{{ asset('css/dashforge.css') }}">

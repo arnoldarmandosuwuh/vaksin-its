@@ -3,8 +3,11 @@
     <script src="{{ asset('lib/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('lib/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('lib/js-cookie/js.cookie.js') }}"></script>
+    <script src="{{ asset('lib/sweetalert2/sweetalert2.all.min.js') }}"></script>
     <script src="{{ asset('js/dashforge.js') }}"></script>
     <script src="{{ asset('js/dashforge.aside.js') }}"></script>
+    <script src="{{ asset('lib/select2/js/select2.min.js') }}"></script>
+    <script src="{{ asset('lib/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
     <!-- Script base -->

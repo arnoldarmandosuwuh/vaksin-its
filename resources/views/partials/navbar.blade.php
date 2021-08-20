@@ -1,6 +1,6 @@
 <div class="content-header align-items-center justify-content-start pos-fixed wd-100p z-index-10">
     <div>
-        <a href="../../index.html" class="tx-montserrat tx-semibold tx-18 d-lg-none">myITS Vaksin</a>
+        <a href="{{ route('dashboard') }}" class="tx-montserrat tx-semibold tx-18 d-lg-none">myITS Vaksin</a>
     </div>
     <nav class="nav r-25 pos-fixed z-index-10">
         <div class="dropdown dropdown-profile allow-focus">
@@ -9,7 +9,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right allow-focus">
             <h5 class="tx-medium tx-montserrat mg-b-5 text-capitalize">{{ Auth::user()->name }}</h5>
-            <p class="mg-b-25 tx-13 tx-color-03">{{ Auth::user()->nip }}</p>
+            <p class="mg-b-25 tx-13 tx-color-03">{{ Auth::user()->pegawai[0]->nip }}</p>
             <a href="" class="dropdown-item" data-toggle="modal" data-target="#chgRoleUser" data-animation="effect-scale">
               <i data-feather="users"></i>Ganti hak akses
             </a>
@@ -31,11 +31,11 @@
           <span aria-hidden="true">×</span>
         </button>
         <h5 class="tx-montserrat tx-medium" id="chgRoleUserLabel">Hak Akses</h5>
-        <p class="tx-color-02">Hak akses Anda saat ini: <b>User </b>.</p>
+        <p class="tx-color-02">Hak akses Anda saat ini: <b class="text-capitalize">{{ Auth::user()->roles->pluck('name')[0] }} </b>.</p>
         <select class="form-control" id="menu">
           <option selected="selected">Select One</option>
-          <option value="../beranda/index.html">Pegawai</option>
-          <option value="../beranda/index-admin.html">Admin</option>
+          <option value="{{ route('dashboard') }}">Pegawai</option>
+          <option value="{{ route('dashboard') }}">Admin</option>
         </select>
         <div class="mg-t-20 d-flex justify-content-end">
           <button type="button" class="btn btn-white tx-montserrat tx-semibold" data-dismiss="modal">Batal</button>
