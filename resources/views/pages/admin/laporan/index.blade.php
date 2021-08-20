@@ -38,7 +38,7 @@
                   @foreach ($vaksin as $item)
                       <tr>
                         <td class="td-its align-middle border-bottom">
-                            <a href="{{ route('pegawai.show', $item->pegawai->id) }}">
+                            <a href="{{ route('laporan.show', $item->id) }}">
                               <p class="mg-b-0 tx-medium tx-color-its3">{{ $item->pegawai->users->name }}</p>
                               <p class="mg-b-0 tx-13 tx-color-03">{{ $item->pegawai->nik }}</p>
                             </a>

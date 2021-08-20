@@ -18,6 +18,15 @@ class LaporanController extends Controller
         ]);
     }
 
+    public function show($id)
+    {
+        $laporan = Peserta::with(['pegawai', 'jadwal'])->findOrFail($id);
+
+        return view('pages.admin.laporan.detail', [
+            'laporan' => $laporan,
+        ]);
+    }
+
     public function hadir($id)
     {
         $peserta = Peserta::findOrFail($id);
