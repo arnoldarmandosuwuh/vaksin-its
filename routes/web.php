@@ -27,6 +27,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('jenis-vaksin', JenisVaksinController::class);
     Route::resource('vaksinator', VaksinatorController::class);
     Route::resource('pegawai', PegawaiController::class);
+    Route::get('jadwal-vaksinasi/{id}/peserta', [JadwalVaksinasiController::class, 'getPeserta'])->name('jadwal-vaksinasi.peserta');
+    Route::delete('jadwal-vaksinasi/{id}/peserta/delete', [JadwalVaksinasiController::class, 'deletePeserta'])->name('jadwal-vaksinasi.peserta.delete');
     Route::resource('jadwal-vaksinasi', JadwalVaksinasiController::class);
     Route::put('laporan/hadir/{id}', [LaporanController::class, 'hadir'])->name('laporan.hadir');
     Route::put('laporan/tidak-hadir/{id}', [LaporanController::class, 'tidakHadir'])->name('laporan.tidak-hadir');

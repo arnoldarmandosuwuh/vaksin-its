@@ -104,8 +104,8 @@
                 </div>
               </div>
               <div class="col-2 col-sm-2 col-lg-2 d-flex align-items-center justify-content-end">
-                <a href="vaksinasi-peserta.html" class="btn btn-white tx-montserrat tx-semibold float-right d-none d-lg-block"><i data-feather="edit" class="wd-10 mg-r-5"></i> Edit Peserta</a>
-                <a href="vaksinasi-peserta.html" class="btn btn-white btn-icon tx-montserrat tx-medium float-right d-lg-none"><i data-feather="edit"></i></a>
+                <a href="{{ route('jadwal-vaksinasi.peserta', $jadwal->id) }}" class="btn btn-white tx-montserrat tx-semibold float-right d-none d-lg-block"><i data-feather="edit" class="wd-10 mg-r-5"></i> Edit Peserta</a>
+                <a href="{{ route('jadwal-vaksinasi.peserta', $jadwal->id) }}" class="btn btn-white btn-icon tx-montserrat tx-medium float-right d-lg-none"><i data-feather="edit"></i></a>
               </div>
             </div>
           </div>

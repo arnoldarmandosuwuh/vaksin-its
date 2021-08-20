@@ -8,6 +8,8 @@ use App\Models\JenisVaksin;
 use Illuminate\Http\Request;
 use App\Models\JadwalVaksinasi;
 use App\Http\Controllers\Controller;
+use App\Models\Pegawai;
+use App\Models\Peserta;
 use Illuminate\Support\Facades\Validator;
 
 class JadwalVaksinasiController extends Controller
@@ -169,5 +171,25 @@ class JadwalVaksinasiController extends Controller
         $jadwal->delete();
 
         return redirect()->route('jadwal-vaksinasi.index')->with('success', 'Jadwal vaksinasi berhasil dihapus.');
+    }
+
+    public function getPeserta($id)
+    {
+        $jadwal = Peserta::where('jadwal_vaksin_id', '=', $id)->with('pegawai')->get();
+        $peserta = Pegawai::all();
+        return view('pages.admin.jadwal-vaksin.peserta', [
+            'id' => $id,
+            'jadwal' => $jadwal,
+            'peserta' => $peserta,
+        ]);
+    }
+
+    
+    public function deletePeserta(Request $request, $id)
+    {
+        $peserta = Peserta::findOrFail($request->id);
+        $peserta->delete();
+
+        return redirect()->route('jadwal-vaksinasi.index')->with('success', 'Peserta vaksinasi berhasil dihapus.');
     }
 }
