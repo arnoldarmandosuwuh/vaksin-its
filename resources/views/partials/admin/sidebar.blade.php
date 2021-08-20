@@ -10,7 +10,7 @@
   <ul class="nav nav-aside">
       <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link"><i data-feather="home"></i> <span>Beranda</span></a></li>
       <li class="nav-label mg-t-15">Kelola</li>
-      <li class="nav-item"><a href="../admin/vaksinasi.html" class="nav-link"><i data-feather="calendar"></i> <span>Jadwal Vaksinasi</span></a></li>
+      <li class="nav-item"><a href="{{ route('jadwal-vaksinasi.index') }}" class="nav-link"><i data-feather="calendar"></i> <span>Jadwal Vaksinasi</span></a></li>
       <li class="nav-item"><a href="../admin/laporan.html" class="nav-link"><i data-feather="clipboard"></i> <span>Laporan</span></a></li>
       <li class="nav-label mg-t-15">Data</li>
       <li class="nav-item"><a href="{{ route('pegawai.index') }}" class="nav-link"><i data-feather="user"></i> <span>Pegawai</span></a></li>

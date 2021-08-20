@@ -15,4 +15,9 @@ class JenisVaksin extends Model
     protected $fillable = [
         'nama',
     ];
+
+    public function jadwal()
+    {
+        return $this->hasMany('App\Models\JadwalVaksinasi', 'vaksin_id', 'id');
+    }
 }

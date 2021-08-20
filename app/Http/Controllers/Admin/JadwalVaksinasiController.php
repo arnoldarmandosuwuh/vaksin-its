@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Pegawai;
+use App\Models\JadwalVaksinasi;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class PegawaiController extends Controller
+class JadwalVaksinasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,11 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai = Pegawai::with('users')->get();
-        return view('pages.admin.pegawai.index', [
-            'pegawai' => $pegawai,
+        $jadwal = JadwalVaksinasi::all();
+        $today = Carbon::now()->format('Y-m-d');
+        return view('pages.admin.jadwal-vaksin.index', [
+            'jadwal' => $jadwal,
+            'today' => $today,
         ]);
     }
 
@@ -50,10 +53,7 @@ class PegawaiController extends Controller
      */
     public function show($id)
     {
-        $pegawai = Pegawai::findOrFail($id)->with('users')->first();
-        return view('pages.admin.pegawai.detail', [
-            'pegawai' => $pegawai,
-        ]);
+        //
     }
 
     /**

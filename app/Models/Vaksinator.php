@@ -15,4 +15,9 @@ class Vaksinator extends Model
     protected $fillable = [
         'nama',
     ];
+
+    public function jadwal()
+    {
+        return $this->hasMany('App\Models\JadwalVaksinasi', 'vaksinator_id', 'id');
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\JadwalVaksinasiController;
 use App\Http\Controllers\Admin\JenisVaksinController;
 use App\Http\Controllers\Admin\PegawaiController;
 use App\Http\Controllers\Admin\VaksinatorController;
@@ -22,6 +23,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('jenis-vaksin', JenisVaksinController::class);
     Route::resource('vaksinator', VaksinatorController::class);
     Route::resource('pegawai', PegawaiController::class);
+    Route::resource('jadwal-vaksinasi', JadwalVaksinasiController::class);
 });
 
 require __DIR__.'/auth.php';
