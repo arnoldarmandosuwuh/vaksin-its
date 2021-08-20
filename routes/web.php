@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\JadwalVaksinasiController;
 use App\Http\Controllers\Admin\JenisVaksinController;
+use App\Http\Controllers\Admin\LaporanController;
 use App\Http\Controllers\Admin\PegawaiController;
 use App\Http\Controllers\Admin\VaksinatorController;
 use App\Http\Controllers\DashboardController;
@@ -27,6 +28,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('vaksinator', VaksinatorController::class);
     Route::resource('pegawai', PegawaiController::class);
     Route::resource('jadwal-vaksinasi', JadwalVaksinasiController::class);
+    Route::put('laporan/hadir/{id}', [LaporanController::class, 'hadir'])->name('laporan.hadir');
+    Route::put('laporan/tidak-hadir/{id}', [LaporanController::class, 'tidakHadir'])->name('laporan.tidak-hadir');
+    Route::resource('laporan', LaporanController::class);
     
     // Route Pegawai
     Route::resource('jadwal-vaksin', JadwalVaksinController::class);

@@ -54,10 +54,25 @@ class JadwalVaksinController extends Controller
         if($validate->fails()) {
             return back()->with('errors', $validate->message()->all()[0]->withInput());
         } else {
+            $cek_vaksin = Peserta::where('pegawai_id', '=', Auth::user()->pegawai[0]->id)->count();
+
+            if ($cek_vaksin > 0) {
+                $vaksin_ke = 2;
+                $tanggal_kembali = null;
+            } else {
+                $vaksin_ke = 1;
+                $tanggal_kembali = Carbon::now()->addDays(28);
+            }
+
             $peserta = Peserta::create([
                 'jadwal_vaksin_id' => $request->jadwal_vaksin_id,
                 'pegawai_id' => Auth::user()->pegawai[0]->id,
+                'tanggal_vaksin' => Carbon::now(),
+                'vaksin_ke' => $vaksin_ke,
+                'tanggal_kembali' => $tanggal_kembali,
             ]);
+
+            $peserta->save();
     
             if ($peserta) {
                 return redirect()->route('jadwal-vaksin.index')->with('success', 'Pendaftaran vaksinasi berhasil.');

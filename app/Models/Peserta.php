@@ -15,6 +15,10 @@ class Peserta extends Model
     protected $fillable = [
         'jadwal_vaksin_id',
         'pegawai_id',
+        'hadir',
+        'vaksin_ke',
+        'tanggal_vaksin',
+        'tanggal_kembali',
     ];
 
     public function pegawai()

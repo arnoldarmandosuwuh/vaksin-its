@@ -26,7 +26,11 @@
 
             @foreach ($jadwal as $item )
               <div class="card-list-item">
-                <a href="{{ route('jadwal-vaksinasi.show', $item->id) }}">
+                @if (\Carbon\Carbon::createFromFormat('Y-m-d', $item->pendaftaran_mulai)->isPast() && \Carbon\Carbon::createFromFormat('Y-m-d', $item->pendaftaran_selesai)->isFuture())
+                  <a href="{{ route('jadwal-vaksinasi.show', $item->id) }}">
+                @else
+                  <a href="#">
+                @endif
                   <div class="d-flex justify-content-between align-items-center sc-link">
                     <div class="media">
                       <div class="wd-40 ht-40 bg-its-icon tx-color-its mg-r-15 mg-md-r-15 d-flex align-items-center justify-content-center rounded-its"><i data-feather="calendar"></i></div>

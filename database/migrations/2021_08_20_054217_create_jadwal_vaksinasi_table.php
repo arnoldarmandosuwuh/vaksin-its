@@ -21,6 +21,7 @@ class CreateJadwalVaksinasiTable extends Migration
             $table->time('sesi_mulai');
             $table->time('sesi_selesai');
             $table->string('lokasi');
+            $table->string('penyelenggara')->default('Internal');
             $table->integer('kuota');
             $table->foreignId('vaksinator_id')->nullable()->references('id')->on('vaksinator')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('vaksin_id')->nullable()->references('id')->on('jenis_vaksin')->constrained()->onDelete('cascade')->onUpdate('cascade');
